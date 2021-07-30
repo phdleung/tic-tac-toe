@@ -1,5 +1,8 @@
 # https://docs.github.com/en/actions/quickstart
 
+# TODO - Add develop/master steps
+# TODO - Add a test pipeline
+
 name: GitHub Actions Demo
 on: [push]
 jobs:
