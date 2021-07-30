@@ -10,6 +10,10 @@ type TileProps = {
 };
 
 const Tile = ({ value, index, onClick }: TileProps): ReactElement => {
+
+  /**
+   * TODO - Get CROSS/CIRCLE svg and animate transition
+   */
   return (
     <div className="Tile" onClick={() => onClick(index)}>
       <Header as="h1">{value}</Header>
