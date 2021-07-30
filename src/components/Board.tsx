@@ -2,9 +2,9 @@ import { ReactElement, useEffect, useState } from "react";
 import { WinnerGames } from "../helpers/WinnerGames";
 import Tile, { TileValue } from "./Tile";
 
-// type Human = "human";
-// type Machine = "machine";
-// type Player = Machine | Human;
+type Human = "human";
+type Machine = "machine";
+type Player = Machine | Human;
 
 export type Winner = TileValue | "tie";
 
@@ -25,6 +25,8 @@ const Board = ({ onGameFinish }: BoardProps): ReactElement => {
     undefined,
   ]);
   const [playerTurn, setPlayerTurn] = useState<TileValue>("x");
+  const [currentPlayer, setCurrentPlayer] = useState<Player>('human');
+
 
   const onTileClick = (index: number): void => {
     const updatedBoard = [...tiles];
@@ -32,6 +34,14 @@ const Board = ({ onGameFinish }: BoardProps): ReactElement => {
     setTiles(updatedBoard);
     setPlayerTurn(playerTurn === "x" ? "o" : "x");
   };
+
+  useEffect(()=>{
+    if(currentPlayer === 'machine'){
+      // Make a move based on the winnerGames
+      // First step: Check if one of the WinnerGames was not used
+      // ...
+    }
+  }, [currentPlayer]);
 
   const winningCondition = WinnerGames.find((conditionRow) => {
     // Getting each condition row from the Winner Games Array
