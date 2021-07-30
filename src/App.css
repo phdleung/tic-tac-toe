@@ -1,5 +1,60 @@
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
 .App {
   text-align: center;
+}
+
+.BoardWrapper {
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 2rem;
+  border: 20px solid black;
+}
+
+.winnerWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Board {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 6px;
+  row-gap: 6px;
+  background-color:black;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+}
+
+.Tile {
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.Tile:hover{
+ background-color:lightblue;
+ cursor: pointer;
 }
 
 .App-logo {
